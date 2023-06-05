@@ -93,7 +93,7 @@
 #define fake_gettext_glslversion	_("SHADERS")
 
 #define gettext_controllers_settings				_("4 - CONTROLLER SETTINGS")
-#define gettext_controllers_and_bluetooth_settings  _("CONTROLLER & BLUETOOTH SETTINGS")
+#define gettext_controllers_and_bluetooth_settings  _("4 - CONTROLLER & BLUETOOTH SETTINGS")
 
 #define fake_gettext_disk_internal _("INTERNAL")
 #define fake_gettext_disk_external _("ANY EXTERNAL")
