@@ -160,31 +160,31 @@ GuiMenu::GuiMenu(Window *window, bool animate) : GuiComponent(window), mMenu(win
 #if BATOCERA
 		addEntry(_("2 - GAME SETTINGS").c_str(), true, [this] { openGamesSettings(); }, "iconGames");
 		addEntry(controllers_settings_label.c_str(), true, [this] { openControllersSettings(); }, "iconControllers");
-		addEntry(_("4 - USER INTERFACE SETTINGS").c_str(), true, [this] { openUISettings(); }, "iconUI");
-		addEntry(_("5 - GAME COLLECTION SETTINGS").c_str(), true, [this] { openCollectionSystemSettings(); }, "iconAdvanced");
-		addEntry(_("6 - SOUND SETTINGS").c_str(), true, [this] { openSoundSettings(); }, "iconSound");
+		addEntry(_("3 - USER INTERFACE SETTINGS").c_str(), true, [this] { openUISettings(); }, "iconUI");
+		addEntry(_("7 - GAME COLLECTION SETTINGS").c_str(), true, [this] { openCollectionSystemSettings(); }, "iconAdvanced");
+		addEntry(_("5 - SOUND SETTINGS").c_str(), true, [this] { openSoundSettings(); }, "iconSound");
 
 		if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::WIFI))
-			addEntry(_("7 - NETWORK SETTINGS").c_str(), true, [this] { openNetworkSettings(); }, "iconNetwork");
+			addEntry(_("6 - NETWORK SETTINGS").c_str(), true, [this] { openNetworkSettings(); }, "iconNetwork");
 #else
 		if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::GAMESETTINGS))
 			addEntry(_("2 - GAME SETTINGS").c_str(), true, [this] { openGamesSettings(); }, "iconGames");
 
-		addEntry(_("4 - USER INTERFACE SETTINGS").c_str(), true, [this] { openUISettings(); }, "iconUI");
+		addEntry(_("3 - USER INTERFACE SETTINGS").c_str(), true, [this] { openUISettings(); }, "iconUI");
 
 		if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::GAMESETTINGS))		
 			addEntry(controllers_settings_label.c_str(), true, [this] { openControllersSettings(); }, "iconControllers");
 		else
-			addEntry(_("3 - CONFIGURE INPUT"), true, [this] { openConfigInput(); }, "iconControllers");
+			addEntry(_("4 - CONFIGURE INPUT"), true, [this] { openConfigInput(); }, "iconControllers");
 
-		addEntry(_("6 - SOUND SETTINGS").c_str(), true, [this] { openSoundSettings(); }, "iconSound");
+		addEntry(_("5 - SOUND SETTINGS").c_str(), true, [this] { openSoundSettings(); }, "iconSound");
 
 #ifdef _ENABLEEMUELEC
 if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::WIFI))
-			addEntry(_("7 - NETWORK SETTINGS").c_str(), true, [this] { openNetworkSettings(); }, "iconNetwork");   
+			addEntry(_("6 - NETWORK SETTINGS").c_str(), true, [this] { openNetworkSettings(); }, "iconNetwork");   
 #endif        
 
-		addEntry(_("5 - GAME COLLECTION SETTINGS").c_str(), true, [this] { openCollectionSystemSettings(); }, "iconAdvanced");
+		addEntry(_("7 - GAME COLLECTION SETTINGS").c_str(), true, [this] { openCollectionSystemSettings(); }, "iconAdvanced");
 
 		if (!ApiSystem::getInstance()->isScriptingSupported(ApiSystem::GAMESETTINGS))
 		{
