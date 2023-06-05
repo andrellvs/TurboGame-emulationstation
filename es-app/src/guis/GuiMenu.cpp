@@ -92,8 +92,8 @@
 #define fake_gettext_glversion		_("VERSION")
 #define fake_gettext_glslversion	_("SHADERS")
 
-#define gettext_controllers_settings				_("CONTROLLER SETTINGS")
-#define gettext_controllers_and_bluetooth_settings  _("4 - CONTROLLER & BLUETOOTH SETTINGS")
+#define gettext_controllers_settings				_("4 - CONTROLLER SETTINGS")
+#define gettext_controllers_and_bluetooth_settings  _("CONTROLLER & BLUETOOTH SETTINGS")
 
 #define fake_gettext_disk_internal _("INTERNAL")
 #define fake_gettext_disk_external _("ANY EXTERNAL")
@@ -129,7 +129,7 @@ GuiMenu::GuiMenu(Window *window, bool animate) : GuiComponent(window), mMenu(win
 	// KODI
 #ifdef _ENABLE_KODI_
 	if (SystemConf::getInstance()->getBool("kodi.enabled", true) && ApiSystem::getInstance()->isScriptingSupported(ApiSystem::KODI))
-		addEntry(_("MEDIA CENTER").c_str(), false, [this] 
+		addEntry(_("MEDIA CENTER").c_str(), true, [this] 
 	{ 
 		Window *window = mWindow;
 		delete this;
