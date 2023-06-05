@@ -175,7 +175,7 @@ GuiMenu::GuiMenu(Window *window, bool animate) : GuiComponent(window), mMenu(win
 		if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::GAMESETTINGS))		
 			addEntry(controllers_settings_label.c_str(), true, [this] { openControllersSettings(); }, "iconControllers");
 		else
-			addEntry(_("4 - CONFIGURE INPUT"), true, [this] { openConfigInput(); }, "iconControllers");
+			addEntry(_("CONFIGURE INPUT"), true, [this] { openConfigInput(); }, "iconControllers");
 
 		addEntry(_("5 - SOUND SETTINGS").c_str(), true, [this] { openSoundSettings(); }, "iconSound");
 
@@ -215,12 +215,12 @@ if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::WIFI))
 	}
 
 #ifdef WIN32
-	addEntry(_("QUIT").c_str(), !Settings::getInstance()->getBool("ShowOnlyExit"), [this] {openQuitMenu(); }, "iconQuit");
+	addEntry(_("11 - QUIT").c_str(), !Settings::getInstance()->getBool("ShowOnlyExit"), [this] {openQuitMenu(); }, "iconQuit");
 #else
 #ifdef _ENABLEEMUELEC
 if (!isKidUI)
 #endif
-	addEntry(_("QUIT").c_str(), true, [this] { openQuitMenu(); }, "iconQuit");
+	addEntry(_("11 - QUIT").c_str(), true, [this] { openQuitMenu(); }, "iconQuit");
 #endif
 	
 	addChild(&mMenu);
